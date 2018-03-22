@@ -11,16 +11,15 @@ The aim of the classifier is to learn from this data in order correctly label wh
 The Naïve Bayes Algorithm is based around ever so popular Bayes theorem. 
 In this context, a vector 'X' of 25 boolean variables describes the 'state' of the game. The class label or 'direction', either 'North, East, South, West', and a specific direction, i, is referred to by 'Ai'. 
 
-We have for a given feature vector/state 'X', and a class label/direction 'Ai':
+**We have for a given feature vector/state 'X', and a class label/direction 'Ai'**:
 
-Bayes Theorem:
-P(Ai | X) = ((P (X | Ai) * P(Ai)) / P(X)
-Posterior = (Likelihood * Prior) /  Evidence
+**Bayes Theorem: P(Ai | X) = ((P (X | Ai) * P(Ai)) / P(X)** <br>
+**Posterior = (Likelihood * Prior) /  Evidence**
 
-Intuitive explanation of each component:
-Likelihood = P(X | Ai) = "**whats the probability of the STATE being X**, IF pacman moved in direction Ai?"
-Prior = P(Ai) = "The probability of Pacman moving in direction Ai"
-Evidence = P(X) = "The probability of seeing STATE X"
+**Intuitive explanation of each component:** <br>
+**Likelihood = P(X | Ai):**  "Whats the probability of the game STATE being X, IF pacman moved in direction Ai?"
+**Prior = P(Ai):**   "The probability of Pacman moving in direction Ai"
+**Evidence = P(X):**  "The probability of seeing STATE X"
 
 
 Then the classification is the class Ai with the highest posterior probability P(Ai | X).
@@ -33,6 +32,7 @@ This is an important assumption which allows us to compute a solid estimate of t
 
 Essentially - there is a large number of possible 'states' the pacman game could be in. A training dataset covering every single possible 'state' would have to be enormous. Conditional independence gives us a way to compute an approximation to P(X | Ai) **without** needing to have seen the exact 'state' beforehand in our training set. 
 
+## Evaluating the model performance: Analysis of results
 
 
 
