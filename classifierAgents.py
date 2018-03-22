@@ -23,7 +23,7 @@
 # Student side autograding was added by Brad Miller, Nick Hay, and
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
 
-# The agents here are extensions written by Simon Parsons, based on the code in
+# The agents here are extensions written by Adil Zia, based on the code in
 # pacmanAgents.py
 
 
