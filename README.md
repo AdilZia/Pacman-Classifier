@@ -1,5 +1,7 @@
 # Pacman-Classifier
 ## Bringing Pacman to life using Machine learning and a Naive Bayes Classification algorithm. 
+- See the file "classifierAgent.py" for my code. 
+- This file is my solution to one of my masters degree machine learning courseworks, for which I recieved a grade of 89%. 
 
 ### The training dataset:
 This is a dataset which has recorded 38,696 previous "good moves" called moves2.txt.
@@ -20,8 +22,6 @@ The (aggregated) confusion matrix is also displayed below:
  [   807.   8418.     18.   1528.] <br>
  [   321.    343.   6780.    363.] <br>
  [   454.    518.    121.  10205.]]
-
-
 
 
 ### A guide explanining the mathematical components behind the Algorithm:
@@ -55,7 +55,7 @@ Mathematically, this is where we assume: P(X|Ai) is the same as the Product of P
 
 The great thing about this is that it essentially gives us a way to estimate the likelihood with *far, far* less data. In other words, we don't need to have seen *every single* exact possible state beforehand to have a good estimate of it's likelihood.  
 
-However, what if the features aren't actually independent, I hear you cry?
+However, what if the features aren't actually independent? That's a good question...
 
 Naive Bayes can still perform well in cases where the features aren't exactly independent, although ofcourse, the more 'dependent' the features are on each other, the worse that the Naive Bayes algorithm will perform. So it's definitely important to consider this when deciding whether to use this algorithm. 
 
