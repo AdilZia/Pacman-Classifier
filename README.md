@@ -16,16 +16,15 @@ Running 5-Fold Cross Validation on my classification model, the results of each 
 
 The (aggregated) confusion matrix is also displayed below:
 
-[[  6912.     99.   1280.    529.]
- [   807.   8418.     18.   1528.]
- [   321.    343.   6780.    363.]
+[[  6912.     99.   1280.    529.] <br>
+ [   807.   8418.     18.   1528.] <br>
+ [   321.    343.   6780.    363.] <br>
  [   454.    518.    121.  10205.]]
 
 
 
 
 ### A guide explanining the mathematical components behind the Algorithm:
-#### Bayes Theorem:
 **The Naïve Bayes Algorithm is based around ever so popular Bayes theorem.  <br>**
 
 The 'state' of the game is a vector 'X', consisting of 25 individual boolean variables describing the 'state'. <br>
@@ -41,8 +40,10 @@ The class label or 'direction' is either 'North, East, South, West'. A specific 
 **Prior = P(Ai):**   "The probability of Pacman moving in direction Ai" <br>
 **Evidence = P(X):**  "The probability of seeing state X"
 
+This equation produces the 'Posterior' probability P(Ai | X). The posterior probability is computed for each possible direction Pacman could move (North, East, South, West). <br>
+..You can think of the posterior probability as an indication of how likely the algorithm thinks that direction is the correct direction. 
 
-Then the classification is the class Ai with the highest posterior probability P(Ai | X).
+Ofcourse, the algorithm needs to make a single best choice. To do this, the algorithm will select the direction which has the highest 'Posterior' probability. 
 
 ### Conditional Independence Assumption: From Bayes theorem to Naive Bayes
 **This is an important assumption and is the very reason the Naive Bayes classifier is called 'Naive'**
