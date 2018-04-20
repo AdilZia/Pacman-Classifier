@@ -82,7 +82,7 @@ class ClassifierAgent(Agent):
     def registerInitialState(self, state):
 
         # open datafile, extract content into an array, and close.
-        self.datafile = open('moves2.txt', 'r')
+        self.datafile = open('good-moves.txt', 'r')
         content = self.datafile.readlines()
         self.datafile.close()
 
