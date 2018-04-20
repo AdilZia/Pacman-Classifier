@@ -106,18 +106,18 @@ class ClassifierAgent(Agent):
         # Convert data and target into numpy arrays 
         self.X = np.array(self.data)
         self.y = np.array(self.target).reshape(-1,1)
+        # self.X is an array of arrays of integers (0 or 1) indicating state.
+        # self.y is an array of imtegers 0-3 indicating the action taken in that state.
 
         # Intitialise self.PConditional and self.Priors
+        # After training, these store our learned model so we only need to learn it once
         self.PConditional = None
         self.Priors = None
+
         
-    
-        # X and y are both arrays of arbitrary length.
-        # X is an array of arrays of integers (0 or 1) indicating state.
-        # y is an array of imtegers 0-3 indicating the action taken in that state.
 
         # *********************************************
-        # CODE WHICH OUTPUTS MY MODEL EVALUATION METRICS
+        # Code which outputs my model evaluation metrics
         # Displays results in terminal on running
         # *********************************************
 
@@ -147,7 +147,7 @@ class ClassifierAgent(Agent):
         print 'Done! Pacman will start playing now'
         
 
-           
+    # My Functions below:      
     # ***************************************************************    
     # NB_TrainModel Trains the model given predictors X and target y 
     # It computes the prior probabilities of classes
@@ -201,7 +201,7 @@ class ClassifierAgent(Agent):
     
      
         
-    # This function calculates the posterior probabilities and classifies a new feature
+    # This function below calculates the posterior probabilities and classifies a new feature
     # by assuming conditional independence and finding the product of P(Xj | Ai)
     # Outputs Action Number
     
@@ -301,11 +301,6 @@ class ClassifierAgent(Agent):
 
         print "I'm done!"
         
-        # *********************************************
-        #
-        # Any code you want to run at the end goes here.
-        #
-        # *********************************************
 
     # Turn the numbers from the feature set into actions:
     def convertNumberToMove(self,number):
