@@ -22,7 +22,7 @@ Note: pacman definitely won't win! This is natural, it's because the original 's
 
 
 ### The training dataset:
-This is a dataset which has recorded 38,696 previous "good moves" called moves.txt.
+This is a dataset which has recorded 38,696 previous "good moves" called good-moves.txt.
 It contains a record of both the "state" of the game at the time, and the "move" which Pacman took in that state. 
 
 This is a classification problem. The classifier needs to **learn** from the training data which 'move' should be taken in each 'state'.

@@ -106,6 +106,10 @@ class ClassifierAgent(Agent):
         # Convert data and target into numpy arrays 
         self.X = np.array(self.data)
         self.y = np.array(self.target).reshape(-1,1)
+
+        # Intitialise self.PConditional and self.Priors
+        self.PConditional = None
+        self.Priors = None
         
     
         # X and y are both arrays of arbitrary length.
@@ -116,26 +120,34 @@ class ClassifierAgent(Agent):
         # CODE WHICH OUTPUTS MY MODEL EVALUATION METRICS
         # Displays results in terminal on running
         # *********************************************
-        
-        print 'Testing set evaluation!'
+
+        print
+        print '5-fold cross validation performance!'
+        # This uses 5 fold cross validation to measure the accuracy
         scores,mean,aggregate_confusion = self.KFold_Validation(5)
         print scores
-        print mean
-        print aggregate_confusion
+        print 'Average score:', mean
         print
-        print 'Training set evaluation!'
+        print 'Aggregate Confusion Matrix:'
+        print aggregate_confusion
+        print 
+        print 'FULL Training set evaluation!'
+        # This trains the model on the full dataset
+        # This will also set self.PConditional and self.Priors 
         PConditional, Priors = self.NB_TrainModel()
         y_predict = self.NB_PredictionVector(self.X,PConditional,Priors)
         accuracy = accuracy_score(self.y,y_predict)
-        print accuracy
+        print 'Accuracy:', accuracy
         confusion2 = confusion_matrix(self.y,y_predict)
+        print 'Confusion Matrix:'
         print confusion2
         report = classification_report(self.y,y_predict)
+        print
         print report
+        print 'Done! Pacman will start playing now'
         
-        
-        
-        
+
+           
     # ***************************************************************    
     # NB_TrainModel Trains the model given predictors X and target y 
     # It computes the prior probabilities of classes
@@ -175,6 +187,15 @@ class ClassifierAgent(Agent):
                 #Laplace smoothing applied to numerator and denominator to prevent '0' probabilities  
                 # Assign value of PXjAi, to the appropriate position in PConditional
                 PConditional[i,j] = PXjAi                
+
+
+        # If this is learnt on the full dataset, set the class variables so they are fixed
+        # This means we don't have to keep re-learning these. These tables are now stored.
+        if X_train.all() == self.X.all():
+            self.PConditional = PConditional
+            self.Priors = Priors
+            
+        # Also, Output PCondtional,Priors as a temporary output that can be used how you like. 
         
         return (PConditional,Priors)
     
@@ -305,8 +326,7 @@ class ClassifierAgent(Agent):
         
         # *****************************************************
         # Call Classifier to decide which move to make 
-        PConditional,Priors = self.NB_TrainModel()
-        action = self.NB_ClassifyFeature(features,PConditional,Priors)['action']
+        action = self.NB_ClassifyFeature(features,self.PConditional,self.Priors)['action']
         # *******************************************************
 
         # Get the actions we can try.
