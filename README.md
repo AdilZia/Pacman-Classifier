@@ -3,7 +3,7 @@
 - This file is my solution to one of my MSc Machine learning courseworks. 
 - You can find the original source materials in Berkleys CS188 Artificial Intelligence course. 
 - This project demonstrates the subtle bridge that exists between Machine Learning and Artificial intelligence.
-- The question of **"Which is the best move to make in a given game state"** is the key: And this can be solved via a **variety** of valid approaches, either using Artificial Intelligence, Reinforcement Learning, or, as demonstrated here, by turning it into a Machine Learning classification problem. 
+...The question of **"Which is the best move to make in a given game state"** is the key: And this can be solved via a **variety** of valid approaches, either using Artificial Intelligence, Reinforcement Learning, or, as demonstrated here, by turning it into a Machine Learning classification problem. 
 
 
 ## How to Run the code yourself:
@@ -16,10 +16,12 @@
 
 **python pacman.py --pacman ClassifierAgent**
 
-You should see the code start running, it may take a few seconds to start as the algorithm is trained, then the model evaluation metrics should appear in your terminal. (Cross validation score and aggregated confusion matrix)
+It may take a few seconds to start as the algorithm is trained, then the model evaluation metrics should appear in your terminal. (Cross validation score and aggregated confusion matrix)
 Then you will see Pacman playing a game. 
 
-Note: pacman definitely won't win! This is natural, it's because the original 'state-space' is quite limited, Pacman is only aware of what is within 1 square of him. 
+Note: pacman definitely won't win! This is natural, it's because the original 'state-space' is quite limited. Pacman is only aware of what is within 1 square of him. 
+
+But as the performance metrics will show, the model performs very well at it's **real job** of making accurate classifications given the data. 
 
 
 ### The training dataset:
@@ -69,7 +71,7 @@ In each state, we'l have a P(Ai | X) value for each possible legal move.
 **The 'best' direction is the one with the highest P(Ai | X) or 'posterior' value!** <br>
 
 Naive Bayes is an implementation of the above, ever so popular, bayes theorem. It is called 'Naive' because it makes certain assumptions which *may* not be true in reality, but it often still performs well inspite of this. 
-This assumption is 'Conditional Independence assumption'
+This assumption is the 'Conditional Independence assumption'. 
 
 
 
