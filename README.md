@@ -5,6 +5,23 @@
 - This project demonstrates the subtle bridge that exists between Machine Learning and Artificial intelligence.
 **Here, I'm solving a classification problem at heart, but then using the results to instruct Pacman how to play the game.**
 
+## How to Run the code yourself:
+
+-Download the 'Pacman Files' and classifieragents.py
+-Place all files in one folder, the **same** folder.
+
+-In your terminal, cd to the required folder.
+-Ensure your python environment is 2.7, the code will only run in Python 2.7.
+
+- Then type the following command:
+
+**python pacman.py --pacman ClassifierAgent**
+
+You should see the code start running, it may take a few seconds to start as the algorithm is trained, then the model evaluation metrics should appear in your terminal. (Cross validation score and aggregated confusion matrix)
+Then you will see Pacman playing a game. 
+
+Note: pacman definitely won't win! This is natural, it's because the original 'state-space' is quite limited, Pacman is only aware of what is within 1 square of him. 
+
 
 ### The training dataset:
 This is a dataset which has recorded 38,696 previous "good moves" called moves.txt.
@@ -14,11 +31,6 @@ This is a classification problem. The classifier needs to **learn** from the tra
 
 The classifier's peformance is evaluated based on how accurately it classifies on a 'new'  dataset, aka the 'testing' dataset. 
 This is to avoid overfitting.
-
-
-## How to Run the code yourself:
-
-
 
 
 ### Evaluating the model performance:
