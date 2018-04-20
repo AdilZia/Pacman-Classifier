@@ -7,12 +7,10 @@
 
 ## How to Run the code yourself:
 
--Download the 'Pacman Files' and classifieragents.py
--Place all files in one folder, the **same** folder.
-
--In your terminal, cd to the required folder.
--Ensure your python environment is 2.7, the code will only run in Python 2.7.
-
+- Download the 'Pacman Files' and classifieragents.py
+- Place all files in one folder, the **same** folder.
+- In your terminal, cd to the required folder.
+- Ensure your python environment is 2.7, the code will only run in Python 2.7.
 - Then type the following command:
 
 **python pacman.py --pacman ClassifierAgent**
