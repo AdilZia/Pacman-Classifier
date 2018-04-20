@@ -338,9 +338,6 @@ class ClassifierAgent(Agent):
             print 'Classifier predicted an illegal move, picking random!'
             return api.makeMove(random.choice(legal),legal)
 
-        # getAction has to return a move. Here we pass "STOP" to the
-        # API to ask Pacman to stay where they are. We need to pass
-        # the set of legal moves to teh API so it can do some safety
-        # checking.
+    
         
         
