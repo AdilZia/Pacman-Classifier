@@ -3,7 +3,8 @@
 - This file is my solution to one of my MSc Machine learning courseworks. 
 - You can find the original source materials in Berkleys CS188 Artificial Intelligence course. 
 - This project demonstrates the subtle bridge that exists between Machine Learning and Artificial intelligence.
-**Here, I'm solving a classification problem at heart, but then using the results to instruct Pacman how to play the game.**
+- The question of **"Which is the best move to make in a given game state"** is the key: And this can be solved via a **variety** of valid approaches, either using Artificial Intelligence, Reinforcement Learning, or, as demonstrated here, by turning it into a Machine Learning classification problem. 
+
 
 ## How to Run the code yourself:
 
